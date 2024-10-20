@@ -196,9 +196,38 @@
     font-size: bold;
   }
 
+  .current-category {
+      color: #ffc303;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
 
   /* contents */
- 
+  #likes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+#likes img{
+    width: 192px;
+    height: 192px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    justify-content: space-between;
+    margin: 15px 21px 0 0;
+}
+
+.likes-shopping span{
+    font-weight: bold;
+}
+.likes-community span{
+    font-weight: bold;
+}
+
 
   /* footer */
 
@@ -211,7 +240,7 @@
     /* 배경색 */
     font-family: Arial, sans-serif;
     /* 폰트 스타일 */
-    margin-top: 169px;
+    margin-top: 150px;
   }
 
   .footer-black {
@@ -431,12 +460,32 @@
     <span class="sub-sub">
       <a href="#" class="h4">프로필</a>
       <p>|</p>
-      <a href="#" class="h4">좋아요</a>
+      <a href="#" class="current-category h4">좋아요</a>
       <p>|</p>
       <a href="#" class="h4">알림설정</a>
       <p>|</p>
       <a href="#" class="h4">비밀번호 변경</a>
       </ul>
+  </div>
+  <div id="likes">
+    <div class="likes-shopping h4">
+        <span>쇼핑</span>
+        <div class="likesimage">
+            <a href="#"><img src="/myhome/images/shoppinglike1.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="/myhome/images/shoppinglike2.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="/myhome/images/shoppinglike3.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="/myhome/images/shoppinglike4.png" alt="쇼핑좋아요"></a>
+        </div>
+    </div>
+    <div class="likes-community h4">
+        <span>커뮤니티</span>
+        <div class="likesimage">
+            <a href="#"><img src="/myhome/images/communitylike1.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="/myhome/images/communitylike2.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="/myhome/images/communitylike3.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="/myhome/images/communitylike4.png" alt="커뮤좋아요"></a>
+        </div>
+    </div>
   </div>
 
   <footer>

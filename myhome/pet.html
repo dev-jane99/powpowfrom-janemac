@@ -21,8 +21,14 @@
         }
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        font-family: 'SpoqaHanSansNeo-Regular';
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     /* 헤더 부분 */
@@ -178,30 +184,97 @@
     }
 
     /* contents */
-    #pet-kind {
+
+    #animals {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 67px;
+        width: 161px;
+        height: 42px;
+        background-color: #1c4da0;
+        border-radius: 20px;
+        color: white;
+        margin-left: 700px;
+    }
+
+    #mydog {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-right: 50px;
+        margin-top: 60px;
+    }
+
+    .star {
+        margin-bottom: 70px;
+        margin-top: 20px;
+        margin-left: 199px;
+        transition: fill 0.3s ease;
+        cursor: pointer;
+    }
+
+    .card {
+        width: 270px;
+        height: 430px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        display: flex;
         justify-content: center;
-        padding-top: 221px;
-        margin: 0 auto;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    .choose-pet-kind {
-        margin-top: 20px;
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
     }
 
-    .choose-pet-kind a{
-        margin-right: 25px;
+    .name {
+        font-weight: bold;
+        margin-bottom: 20px;
     }
 
-    .choose-pet-kind img {
-        border: solid 1px #131313;
+    .edit-button {
+        background-color: #1c4da0;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 96px;
+        height: 32px;
+    }
+
+
+    #mydog button {
+        padding: 10px 15px;
+        background-color: #1c4da0;
+        color: white;
+        border: none;
         border-radius: 20px;
-        padding: 83px 34px;
-        flex-direction: row;
+        cursor: pointer;
     }
-
 
 
     /* footer */
@@ -215,7 +288,7 @@
         /* 배경색 */
         font-family: Arial, sans-serif;
         /* 폰트 스타일 */
-        margin-top: 214px;
+        margin-top: 150px;
     }
 
     .footer-black {
@@ -412,9 +485,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="#">나의 정보</a></li>
-                            <li class="sub-menu"><a href="#">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="#">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="/myhome/profile.html">나의 정보</a></li>
+                            <li class="sub-menu"><a href="/myhome/no-pet.html">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="/myhome/shipping-status.html">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -430,17 +503,42 @@
             </div>
         </div>
     </div>
-
-    <div id="pet-kind">
-        <p class="h4"><img src="./images/check.svg" alt="체크아이콘" />프로필에 추가할 동물을 선택해주세요.</p>
-        <div class="choose-pet-kind">
-            <a rel="stylesheet" href="/myhome/choose-dog.html"><img src="./images/mypage-dog.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-cat.html"><img src="./images/mypage-cat.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-bird.html"><img src="./images/mypage-bird.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-fish.html"><img src="./images/mypage-fish.svg" alt=""></a>
+    <a href="/myhome/pet-kind.html"><button id="submit-button">+추가 등록하기</button></a>
+    <div id="animals">
+        <div id="mydog">
+            <div class="card">
+                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <div class="profile-pic" id="profilePic">
+                    <img id="profileImage" src="/myhome/images/default-dog.svg" alt="Profile Picture">
+                </div>
+                <div class="name">포포</div>
+                <input type="file" id="imageUpload" accept="image/*">
+                <a rel="stylesheet" href="/myhome/choose-dog.html"><button class="edit-button">편집</button></a>
+            </div>
+        </div>
+        <div id="mydog">
+            <div class="card">
+                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <div class="profile-pic" id="profilePic">
+                    <img id="profileImage" src="/myhome/images/default-cat.svg" alt="Profile Picture">
+                </div>
+                <div class="name">미미</div>
+                <input type="file" id="imageUpload" accept="image/*">
+                <a rel="stylesheet" href="/myhome/choose-cat.html"><button class="edit-button">편집</button></a>
+            </div>
+        </div>
+        <div id="mydog">
+            <div class="card">
+                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <div class="profile-pic" id="profilePic">
+                    <img id="profileImage" src="/myhome/images/default-bird.svg" alt="Profile Picture">
+                </div>
+                <div class="name">도도</div>
+                <input type="file" id="imageUpload" accept="image/*">
+                <a rel="stylesheet" href="/myhome/choose-bird.html"><button class="edit-button">편집</button></a>
+            </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -494,6 +592,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </footer>
 </body>
 <script>
@@ -501,9 +600,26 @@
     const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
     const subMenuAll = document.querySelector(".sub-menu-wrap");
     const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
+    const stars = document.querySelectorAll('.star');
+    
 
     let count = 0;
     let hoverTimeout; // 타임아웃을 저장할 변수
+    let isYellow = false;
+
+    // star
+   stars.forEach(star => {
+    star.addEventListener('click', () => {
+        // Deselect all stars
+        stars.forEach(s => {
+            s.setAttribute('src', '/myhome/images/star.svg'); // Change to gray
+        });
+
+        // Select the clicked star
+        const filledSrc = star.getAttribute('data-filled-src');
+        star.setAttribute('src', filledSrc); // Change to yellow
+    });
+});
 
     mainMenus.forEach((menu) => {
         menu.addEventListener("mouseover", () => {
